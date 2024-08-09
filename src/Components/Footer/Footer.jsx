@@ -10,7 +10,7 @@ function Footer() {
   return (
     <>
       <div className="bg-blue-gray">
-        <div className="parent container mx-auto text-white p-10 grid grid-cols-3 justify-between items-center text-center">
+        <div className="parent container mx-auto text-white p-10 grid md:grid-cols-3 justify-between items-center text-center">
           <div className="location mt-5 text-center">
             <h2 className="text-2xl font-bold">LOCATION</h2>
             <p className="mt-2">2215 John Daniel Drive</p>
