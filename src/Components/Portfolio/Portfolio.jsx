@@ -15,6 +15,12 @@ function Portfolio() {
     setSrc(imageSrc);
   };
 
+  const handleClosed = (e) => {
+    if (e.target.tagName !== "IMG") {
+      setClicked(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white pt-40">
       <h1 className="text-4xl font-bold uppercase text-blue-gray">
@@ -29,7 +35,6 @@ function Portfolio() {
         <div className="left-line w-20 h-1 bg-blue-gray"></div>
       </div>
       <div className="gallery mt-5 grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-3 container p-8">
-        {/* card */}
         <div
           onClick={() => handleCardClick(port1)}
           className="card group hover:cursor-pointer relative"
@@ -85,7 +90,11 @@ function Portfolio() {
           </div>
         </div>
       </div>
-      {clicked && <Card src={src} />}
+      {clicked && (
+        <div onClick={handleClosed}>
+          <Card src={src} />
+        </div>
+      )}
     </div>
   );
 }
